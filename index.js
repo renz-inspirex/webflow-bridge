@@ -24,6 +24,8 @@ app.post("/", (req, res) => {
 		body: JSON.stringify(req.body),
 		params: JSON.stringify(res.query),
 	});
+
+	await main();
 	res.send("Hello World!");
 });
 
