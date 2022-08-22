@@ -56,27 +56,6 @@ async function main() {
 		`Bearer ${process.env.MONDAY_API_KEY}`
 	);
 
-	// const requestHeaders = {};
-
-	// console.log({ query });
 	const data = await graphQLClient.request(query, variables);
-	// // const data = await request("https://api.graph.cool/simple/v1/movies", query);
-	// // request();
-
-	// let query3 =
-	// 	'mutation{ create_item (board_id:3106569925, item_name:"WHAT IS UP MY FRIENDS!") { id } }';
-	// const data = await fetch("https://api.monday.com/v2", {
-	// 	method: "post",
-	// 	headers: {
-	// 		"Content-Type": "application/json",
-	// 		Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjE3NTQwMTM2OSwidWlkIjozMzIwMzgwMywiaWFkIjoiMjAyMi0wOC0xNVQwNzowMzowOC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTMwOTExMzUsInJnbiI6InVzZTEifQ.9ajwc9LX66g7-UYtXOGOobwNU-ZtwlINMJ5O6Vvm_cU`,
-	// 	},
-	// 	body: JSON.stringify({
-	// 		query: query3,
-	// 	}),
-	// })
-	// 	.then((res) => res.json())
-	// 	.then((res) => console.log(JSON.stringify(res, null, 2)));
-
 	console.log(JSON.stringify(data));
 }
