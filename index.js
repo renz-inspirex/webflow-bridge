@@ -19,7 +19,7 @@ app.get("/", async (req, res) => {
 	res.send("Hello World!");
 });
 
-app.post("/", (req, res) => {
+app.post("/", async (req, res) => {
 	console.log({
 		body: JSON.stringify(req.body),
 		params: JSON.stringify(res.query),
