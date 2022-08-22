@@ -25,7 +25,7 @@ app.post("/", async (req, res) => {
 		params: JSON.stringify(res.query),
 	});
 
-	await main();
+	await main(req.body?.name);
 	res.send("Hello World!");
 });
 
@@ -33,7 +33,7 @@ app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
 
-async function main() {
+async function main(name = "sample item") {
 	const endpoint = process.env.MONDAY_API_ENDPOINT;
 
 	const query = gql`
@@ -45,7 +45,7 @@ async function main() {
 	`;
 
 	const variables = {
-		itemName: "here",
+		itemName: name || "Sample item",
 	};
 
 	const graphQLClient = new GraphQLClient(endpoint, {
